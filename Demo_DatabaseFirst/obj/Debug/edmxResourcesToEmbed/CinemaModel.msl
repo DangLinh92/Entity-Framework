@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CinemaDBModelStoreContainer" CdmEntityContainer="CinemaDBEntities">
+    <EntitySetMapping Name="ChuDes">
+      <EntityTypeMapping TypeName="CinemaDBModel.ChuDe">
+        <MappingFragment StoreEntitySet="ChuDe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TenChuDe" ColumnName="TenChuDe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phims">
+      <EntityTypeMapping TypeName="CinemaDBModel.Phim">
+        <MappingFragment StoreEntitySet="Phim">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="TacGia" ColumnName="TacGia" />
+          <ScalarProperty Name="ChuDeId" ColumnName="ChuDeId" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayDuyet" ColumnName="NgayDuyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_CapNhatPhim" FunctionName="CinemaDBModel.Store.SP_CapNhatPhim" />
+    <FunctionImportMapping FunctionImportName="SP_LayTatCaThongTinPhim" FunctionName="CinemaDBModel.Store.SP_LayTatCaThongTinPhim">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CinemaDBModel.SP_LayTatCaThongTinPhim_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="TacGia" ColumnName="TacGia" />
+          <ScalarProperty Name="ChuDeId" ColumnName="ChuDeId" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayDuyet" ColumnName="NgayDuyet" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LayThongTinChiTietPhim" FunctionName="CinemaDBModel.Store.SP_LayThongTinChiTietPhim">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CinemaDBModel.SP_LayThongTinChiTietPhim_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="TacGia" ColumnName="TacGia" />
+          <ScalarProperty Name="ChuDeId" ColumnName="ChuDeId" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayDuyet" ColumnName="NgayDuyet" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ThemMoiPhim" FunctionName="CinemaDBModel.Store.SP_ThemMoiPhim" />
+    <FunctionImportMapping FunctionImportName="SP_XoaThongTinPhim" FunctionName="CinemaDBModel.Store.SP_XoaThongTinPhim" />
+  </EntityContainerMapping>
+</Mapping>

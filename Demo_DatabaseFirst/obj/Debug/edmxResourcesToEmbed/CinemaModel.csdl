@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChuDe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TenChuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Phims" Relationship="Self.FK_ChuDeId" FromRole="ChuDe" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="Phim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TacGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChuDeId" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="0" />
+    <Property Name="NgayDuyet" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ChuDe" Relationship="Self.FK_ChuDeId" FromRole="Phim" ToRole="ChuDe" />
+  </EntityType>
+  <Association Name="FK_ChuDeId">
+    <End Role="ChuDe" Type="Self.ChuDe" Multiplicity="0..1" />
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuDe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Phim">
+        <PropertyRef Name="ChuDeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChuDes" EntityType="Self.ChuDe" />
+    <EntitySet Name="Phims" EntityType="Self.Phim" />
+    <AssociationSet Name="FK_ChuDeId" Association="Self.FK_ChuDeId">
+      <End Role="ChuDe" EntitySet="ChuDes" />
+      <End Role="Phim" EntitySet="Phims" />
+    </AssociationSet>
+    <FunctionImport Name="SP_CapNhatPhim">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="TieuDe" Mode="In" Type="String" />
+      <Parameter Name="MoTa" Mode="In" Type="String" />
+      <Parameter Name="NoiDung" Mode="In" Type="String" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="TacGia" Mode="In" Type="String" />
+      <Parameter Name="ChuDe" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LayTatCaThongTinPhim" ReturnType="Collection(CinemaDBModel.SP_LayTatCaThongTinPhim_Result)" />
+    <FunctionImport Name="SP_LayThongTinChiTietPhim" ReturnType="Collection(CinemaDBModel.SP_LayThongTinChiTietPhim_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ThemMoiPhim">
+      <Parameter Name="TieuDe" Mode="In" Type="String" />
+      <Parameter Name="MoTa" Mode="In" Type="String" />
+      <Parameter Name="NoiDung" Mode="In" Type="String" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="TacGia" Mode="In" Type="String" />
+      <Parameter Name="ChuDe" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_XoaThongTinPhim">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_LayTatCaThongTinPhim_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="TieuDe" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mota" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="NoiDung" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="TacGia" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ChuDeId" Nullable="true" />
+    <Property Type="DateTime" Name="NgayTao" Nullable="true" />
+    <Property Type="DateTime" Name="NgayDuyet" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_LayThongTinChiTietPhim_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="TieuDe" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mota" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="NoiDung" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="TacGia" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ChuDeId" Nullable="true" />
+    <Property Type="DateTime" Name="NgayTao" Nullable="true" />
+    <Property Type="DateTime" Name="NgayDuyet" Nullable="true" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,11 @@
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\Demo_DatabaseFirst.exe.config
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\Demo_DatabaseFirst.exe
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\Demo_DatabaseFirst.pdb
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\EntityFramework.dll
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\EntityFramework.SqlServer.dll
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\EntityFramework.xml
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\bin\Debug\EntityFramework.SqlServer.xml
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\obj\Debug\Demo_DatabaseFirst.csprojAssemblyReference.cache
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\obj\Debug\Demo_DatabaseFirst.csproj.CopyComplete
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\obj\Debug\Demo_DatabaseFirst.exe
+E:\Git-Responsitory\EntityFramework\Demo_DatabaseFirst\obj\Debug\Demo_DatabaseFirst.pdb

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChuDe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TenChuDe" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Phim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mota" Type="nvarchar" MaxLength="500" />
+    <Property Name="NoiDung" Type="ntext" />
+    <Property Name="ImageName" Type="varchar" MaxLength="150" />
+    <Property Name="TacGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChuDeId" Type="int" />
+    <Property Name="NgayTao" Type="date" />
+    <Property Name="NgayDuyet" Type="date" />
+  </EntityType>
+  <Association Name="FK_ChuDeId">
+    <End Role="ChuDe" Type="Self.ChuDe" Multiplicity="0..1" />
+    <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuDe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Phim">
+        <PropertyRef Name="ChuDeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_CapNhatPhim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="TieuDe" Type="nvarchar" Mode="In" />
+    <Parameter Name="MoTa" Type="nvarchar" Mode="In" />
+    <Parameter Name="NoiDung" Type="ntext" Mode="In" />
+    <Parameter Name="ImageName" Type="varchar" Mode="In" />
+    <Parameter Name="TacGia" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChuDe" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LayTatCaThongTinPhim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LayThongTinChiTietPhim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ThemMoiPhim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TieuDe" Type="nvarchar" Mode="In" />
+    <Parameter Name="MoTa" Type="nvarchar" Mode="In" />
+    <Parameter Name="NoiDung" Type="ntext" Mode="In" />
+    <Parameter Name="ImageName" Type="varchar" Mode="In" />
+    <Parameter Name="TacGia" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChuDe" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_XoaThongTinPhim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="CinemaDBModelStoreContainer">
+    <EntitySet Name="ChuDe" EntityType="Self.ChuDe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phim" EntityType="Self.Phim" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ChuDeId" Association="Self.FK_ChuDeId">
+      <End Role="ChuDe" EntitySet="ChuDe" />
+      <End Role="Phim" EntitySet="Phim" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
