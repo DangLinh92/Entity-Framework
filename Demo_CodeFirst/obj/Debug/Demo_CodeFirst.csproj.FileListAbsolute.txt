@@ -1,0 +1,13 @@
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\Demo_CodeFirst.exe.config
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\Demo_CodeFirst.exe
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\Demo_CodeFirst.pdb
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\EntityFramework.dll
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\EntityFramework.xml
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\obj\Debug\Demo_CodeFirst.csprojAssemblyReference.cache
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\obj\Debug\Demo_CodeFirst.csproj.CopyComplete
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\obj\Debug\Demo_CodeFirst.exe
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\obj\Debug\Demo_CodeFirst.pdb
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\obj\Debug\Demo_CodeFirst.Migrations.CreatePost.resources
+E:\Git-Responsitory\EntityFramework\Demo_CodeFirst\obj\Debug\Demo_CodeFirst.csproj.GenerateResource.cache
