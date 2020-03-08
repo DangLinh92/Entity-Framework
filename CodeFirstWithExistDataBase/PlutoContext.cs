@@ -1,3 +1,5 @@
+using System.Data.Entity.Core.Common.CommandTrees;
+
 namespace CodeFirstWithExistDataBase
 {
     using System;
@@ -15,6 +17,7 @@ namespace CodeFirstWithExistDataBase
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Courses> Courses { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

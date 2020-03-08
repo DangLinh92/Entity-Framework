@@ -17,7 +17,7 @@ namespace CodeFirstWithExistDataBase
 
         public int Id { get; set; }
 
-        public string Title { get; set; }
+        public string Name { get; set; }
 
         public string Description { get; set; }
 
@@ -28,6 +28,9 @@ namespace CodeFirstWithExistDataBase
         public int? Author_Id { get; set; }
 
         public virtual Author Author { get; set; }
+
+        public DateTime? DatePublished { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tag> Tags { get; set; }
