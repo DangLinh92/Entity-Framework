@@ -10,6 +10,12 @@ namespace CodeFirstWithExistDataBase
     {
         static void Main(string[] args)
         {
+            var contex = new PlutoContext();
+            var authors = contex.Authors;
+            foreach (var author in authors)
+            {
+                Console.WriteLine(author.Name);
+            }
         }
     }
 }
